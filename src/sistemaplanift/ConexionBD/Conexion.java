@@ -26,7 +26,7 @@ public class Conexion {
         System.out.println("DB2 driver is loaded successfully");
         
         try {
-            con = DriverManager.getConnection("jdbc:db2://192.9.198.9:50815/DB2PROD", "USERRD1", "14MAY24");
+            con = DriverManager.getConnection("jdbc:db2://192.9.198.9:50815/DB2PROD", "USERRD1", "15jul24");
         } catch (SQLException e) {
             System.out.println("DB2 Database connection Failed");
             e.printStackTrace();

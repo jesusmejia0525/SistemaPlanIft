@@ -19,41 +19,50 @@ import sistemaplanift.dto.PlanIftDto;
  * @author VIQG01X
  */
 public class Excel {
-    public String n1="Plan IFT 03 junio";
-    public String n2="completo";
+    public String n1="Plan IFT 03 junio 2024 (1)";
+    public String n2="pruba2";
 
     public List<PlanIftDto> leerExcel() {
         Cell nir = null;
         Cell serie = null;
         List<PlanIftDto> listPlan = new ArrayList<>();
         File archivo = new File("C:/Users/VIQG01X/Downloads/"+n1+".xlsx");
-
+        InputStream input;
+        Workbook libro=null;
+        Sheet hoja;
+        Iterator<Row> filas;
         try {
             if (archivo == null) {
                 System.out.println("No hay archivo");
             } else {
-                InputStream input = new FileInputStream(archivo);
-                Workbook libro = new XSSFWorkbook(input);
-               Sheet hoja = libro.getSheetAt(0);
-                Iterator<Row> filas = hoja.rowIterator();
-
-                while (filas.hasNext()) {
-                    Row fila = filas.next();
-                    PlanIftDto plan = new PlanIftDto();
-                    plan.setNir(fila.getCell(0).toString());
-                    plan.setSerie(fila.getCell(1).toString());
-                    plan.setNumI(fila.getCell(2).toString());
-                    plan.setNumF(fila.getCell(3).toString());
-                    plan.setRazonSocial(fila.getCell(4).toString());
-                    plan.setNombreCorto(fila.getCell(5).toString());
-                    listPlan.add(plan);
-                }
+                input = new FileInputStream(archivo);
+                libro= new XSSFWorkbook(input);
 
             }
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+                         
+               hoja = libro.getSheetAt(0);
+                filas = hoja.rowIterator();
+
+                while (filas.hasNext()) {
+                      
+                    Row fila = filas.next();
+                    PlanIftDto plan = new PlanIftDto();
+                    plan.setPoblacion(fila.getCell(1).toString());
+                    plan.setEstado(fila.getCell(3).toString());
+                    plan.setNir(fila.getCell(8).toString());
+                    plan.setSerie(fila.getCell(9).toString());
+                    plan.setNumI(fila.getCell(10).toString());
+                    plan.setNumF(fila.getCell(11).toString());
+                    plan.setRazonSocial(fila.getCell(16).toString());
+                    plan.setNombreCorto(fila.getCell(17).toString());
+                    plan.setCpp("P");
+                    
+                    listPlan.add(plan);
+                }
         return listPlan;
     }
 

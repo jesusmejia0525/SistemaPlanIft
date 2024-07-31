@@ -19,6 +19,7 @@ public class ListaNF {
     private String razonSocial;
     private String nombreCorto;
     private String insert;
+    private String operadorExiis;
 
     public String getPrefijo() {
         return prefijo;
@@ -67,19 +68,34 @@ public class ListaNF {
     public void setInsert(String insert) {
         this.insert = insert;
     }
+
+    public String getOperadorExiis() {
+        return operadorExiis;
+    }
+
+    public void setOperadorExiis(String operadorExiis) {
+        this.operadorExiis = operadorExiis;
+    }
+
+   
+    
     
 
     public ListaNF() {
     }
 
-    public ListaNF(String prefijo, String poblacion, String estado, String razonSocial, String nombreCorto, String insert) {
+    public ListaNF(String prefijo, String poblacion, String estado, String razonSocial, String nombreCorto, String insert, String operadorExiis) {
         this.prefijo = prefijo;
         this.poblacion = poblacion;
         this.estado = estado;
         this.razonSocial = razonSocial;
         this.nombreCorto = nombreCorto;
         this.insert = insert;
+        this.operadorExiis = operadorExiis;
     }
+
+
+    
 
     
     public  List<String> obteneterAtributos(){
@@ -90,6 +106,7 @@ public class ListaNF {
         atributos.add(this.razonSocial);
         atributos.add(this.nombreCorto);
         atributos.add(this.insert);
+        atributos.add(this.operadorExiis);
         return atributos;
     }
     

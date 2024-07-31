@@ -17,7 +17,6 @@ public class PlanIftDto {
     private String serie;
     private String numI;
     private String numF;
-    private String cpp;
     private String razonSocial;
     private String nombreCorto;
     private String prefijo;
@@ -70,14 +69,6 @@ public class PlanIftDto {
         this.numF = numF;
     }
 
-    public String getCpp() {
-        return cpp;
-    }
-
-    public void setCpp(String cpp) {
-        this.cpp = cpp;
-    }
-
     public String getRazonSocial() {
         return razonSocial;
     }
@@ -104,10 +95,8 @@ public class PlanIftDto {
 
     @Override
     public String toString() {
-        return "PlanIftDto{" + "poblacion=" + poblacion + ", estado=" + estado + ", nir=" + nir + ", serie=" + serie + ", numI=" + numI + ", numF=" + numF + ", cpp=" + cpp + ", razonSocial=" + razonSocial + ", nombreCorto=" + nombreCorto + ", prefijo=" + prefijo + '}';
+        return "PlanIftDto{" + "poblacion=" + poblacion + ", estado=" + estado + ", nir=" + nir + ", serie=" + serie + ", numI=" + numI + ", numF=" + numF + ", razonSocial=" + razonSocial + ", nombreCorto=" + nombreCorto + ", prefijo=" + prefijo + '}';
     }
-
- 
 
 
       

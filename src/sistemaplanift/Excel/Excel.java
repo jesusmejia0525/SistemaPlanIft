@@ -19,8 +19,9 @@ import sistemaplanift.dto.PlanIftDto;
  * @author VIQG01X
  */
 public class Excel {
-    public String n1="Plan IFT 03 junio 2024 (1)";
-    public String n2="pruba2";
+   //public String n1="Plan IFT 03 junio 2024";
+   public String n1="LibroP";
+    public String n2="prueba de insercion ";
 
     public List<PlanIftDto> leerExcel() {
         Cell nir = null;
@@ -59,7 +60,6 @@ public class Excel {
                     plan.setNumF(fila.getCell(11).toString());
                     plan.setRazonSocial(fila.getCell(16).toString());
                     plan.setNombreCorto(fila.getCell(17).toString());
-                    plan.setCpp("P");
                     
                     listPlan.add(plan);
                 }
@@ -91,7 +91,8 @@ public class Excel {
             }
         }
         try {
-            OutputStream output = new FileOutputStream("PrefijosFaltantes"+n2+".xlsx");
+            //OutputStream output = new FileOutputStream("PrefijosFaltantesConInsert.xlsx");
+            OutputStream output = new FileOutputStream(n2+".xlsx");
             libro.write(output);
             libro.close();
             output.close();
